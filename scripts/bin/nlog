@@ -1,0 +1,3 @@
+#!/bin/sh
+cd ~/zk/logs/
+echo "$(date +'%Y%m%d').md" | sed "s/\s/-/g" | xargs subl

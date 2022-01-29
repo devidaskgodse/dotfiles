@@ -1,0 +1,29 @@
+{
+	"added_words":
+	[
+		"youtube",
+		"google",
+		"habitify",
+		"Raphson",
+		"Siedel",
+		"arxiv",
+		"zettelkasten",
+		"sadhana",
+		"Mizoram",
+		"movie",
+		"webinars",
+		"podcast",
+		"uninstalling",
+		"normies"
+	],
+	"auto_complete_commit_on_tab": true,
+	"color_scheme": "Packages/Pandoc Academic/ColorScheme/Monokai Dark Adapted.tmTheme",
+	"dictionary": "Packages/Language - English/en_GB.dic",
+	"font_face": "Lexend Deca",
+	"font_size": 14,
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+	"theme": "Default Dark.sublime-theme",
+}

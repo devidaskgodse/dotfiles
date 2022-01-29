@@ -1,37 +1,19 @@
 #!/bin/sh
 
-
 sudo apt update
 sudo apt upgrade
 sudo apt install git
 git config --global user.name "Devidas Godse"
 git config --global user.email "devidaskgodse@gmail.com"
+
 sudo apt install build-essential
-sudo apt install preload, timeshift, tlp, 
-sudo apt install sublime-text, sublime-merge
-sudo apt install markdown, pandoc, pandoc-citeproc
-sudo apt install fzf, silversearcher-ag, cmake, ctags
-sudo apt install firefox, vlc, 
-sudo apt install teamviewer, zoom, teams
-sudo apt install 
-sudo apt install texlive-base, texlive-latex-base, texlive-latex-extra, texlive-science, texlive-publishers
-sudo apt install 
-sudo apt install 
-sudo apt install 
-sudo apt install 
+sudo apt install preload timeshift stow tlp
 
-# projects
-git clone https://github.com/sparta/sparta
+sudo apt install neovim sublime-text sublime-merge pandoc pandoc-citeproc 
+# install the vimplug for automatically managing the plugins
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
-
-# optional (comment out if not required for the moment)
-sudo apt install vim, emacs
-sudo apt install gimp
-sudo apt install 
-sudo apt install 
-sudo apt install 
-pip install 
-pip install yahoo-finance
-# links
-# ANACONDA: https://docs.anaconda.com/anaconda/install/linux/
-
+sudo apt install fzf silversearcher-ag cmake tldr xclip dmenu
+sudo apt install anydesk zoom teams ffmpeg mpv zathura youtube-dl dwm hugo go gnuplot ctags rclone zsh autojump mpich ctags adb vlc gimp imagemagick
+sudo apt install texlive-base texlive-latex-base texlive-latex-extra texlive-science texlive-publishers

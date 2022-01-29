@@ -1,0 +1,53 @@
+<snippet>
+	<content><![CDATA[
+\begin{titlepage}
+
+\topskip0pt
+\vspace*{\fill}
+
+\thispagestyle{empty}
+
+%setcounter{page}{3}
+
+\center
+
+{\huge \textbf{Study of Transport Properties at Microscale and Nanoscale}}
+\\[2.0cm]
+
+{Seminar report}
+\\[2.0cm]
+
+{\large \textit{submitted by}}
+\\[0.2cm]
+{\large Devidas Kachru Godse}
+\\[0.2cm]
+{(Roll no. 19i170007)}
+\\[2.0cm]
+
+{\large \textit{Under the guidance of}}
+\\[0.2cm]
+{\large Prof. Manaswita Bose}
+\\[3.0cm]
+
+\includegraphics[height = 5cm]{}
+\\[3.0cm]
+
+{\large
+may 2020
+\\[0.2cm]
+Department of Energy Science and Engineering
+\\[0.2cm]
+Indian Institute of Technology Bombay
+}
+
+\vspace*{\fill}
+
+\end{titlepage}
+
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>titlepage</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.LaTeX</scope> -->
+</snippet>

@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[
+---
+title: "${1:Note Title}"
+date: ${2:2022-01-17}
+tags: [${3:untagged}]
+---
+
+${4:Write from here}
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>zk</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.Markdown</scope> -->
+</snippet>

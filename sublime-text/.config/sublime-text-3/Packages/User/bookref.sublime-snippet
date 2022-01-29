@@ -1,0 +1,17 @@
+<snippet>
+	<content><![CDATA[
+@book{citkey,
+    title = {},
+    author = {},
+    isbn = {},
+    series = {},
+    year = {},
+    publisher = {},
+    keywords = {}
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>bookref</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.LaTeX</scope> -->
+</snippet>

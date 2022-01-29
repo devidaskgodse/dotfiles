@@ -1,0 +1,2 @@
+#!/bin/sh
+echo http://youtu.be/"$(xclip -o | grep -o '[^.*=+]*$')" | xargs mpv

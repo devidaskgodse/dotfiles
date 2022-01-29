@@ -1,0 +1,25 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Advanced CSV",
+		"AutoFileName",
+		"DlangAutoFileName",
+		"FileManager",
+		"FuzzyFilePath",
+		"GitSavvy",
+		"Open URL",
+		"Package Control",
+		"Pandoc Academic",
+		"RemoveDuplicateLines",
+		"Timenow",
+		"UrlConverter",
+	],
+	"repositories":
+	[
+		"https://github.com/renerocksai/sublime_zk"
+	],
+}

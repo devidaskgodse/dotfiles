@@ -1,0 +1,4 @@
+#!/bin/sh
+# locally sync directories and data for ease of use
+# rss feeds
+newsboat -e > ~/lists/RSS.opml

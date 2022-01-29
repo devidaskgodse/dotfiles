@@ -1,0 +1,17 @@
+<snippet>
+	<content><![CDATA[
+\begin{table}[]
+    \centering
+    \caption{${1:this}}
+    \begin{tabular}{c|c}
+         &  \\
+         & 
+    \end{tabular}
+    \label{tab:my_label}
+\end{table}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>table</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!--<scope>source.LaTeX</scope> -->
+</snippet>

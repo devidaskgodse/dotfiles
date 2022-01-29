@@ -16,8 +16,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=-1
+HISTFILESIZE=-1
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -118,51 +118,43 @@ fi
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/machine/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/machine/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/machine/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/machine/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/machine/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/machine/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/machine/anaconda3/bin:$PATH"
+        export PATH="/home/machine/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
 
 #########################################################
-# my aliases
+# my settings
 #########################################################
-alias emacs="emacs -nw"
-# alias wifi="bash ~/wifi.sh"
-alias mount="bash ~/mount.sh"
-#alias org="cd /media/machine/D/org"
-alias nt="cd /media/machine/D/ntwrk"
-alias ffo='nano "$(fzf)"'
+shopt -s autocd
+
+export EDITOR='vim'
+export VISUAL='vim'
+
+# alias fzfkill='ps -e | fzf | xargs echo | awk "{print($1)}" | awk "{print($4)}" | xargs echo | xargs kill'
 alias ts="date +%Y%m%d%H%m"
-alias rmb="rm *.md~"
-# open file by text
-# sudo apt-get install silversearcher-ag
+
+# open file by searching for text in it
+# require `sudo apt-get install silversearcher-ag`
 egf() {
     local file
     local line
     read -r file line <<<"$(ag $ | fzf -0 -1 | awk -F: '{print $1, $2}')"
     if [[ -n $file ]]
     then
-	nano +$line $file
+	vim +$line $file
     fi
 }
 
-alias web='lynx http://127.0.0.1:8080'
-#alias rmb="rm *\~"
-alias panda='pandoc "$(fzf) -o "'
-alias pomodoro='sleep $((25 * 60)) ; echo "25 mins done" && spd-say "25 minutes completed"; notify-send "Pomodoro" "25 minute session completed"'
-# while true; do sleep $((40 * 60)); echo "Fuck away for some time"; sleep $((3 * 60)); done &
+# using fzf in reverse mode
+export FZF_DEFAULT_OPTS="--layout=reverse --height=40%"
 
-# node path
-export NODE_PATH=/usr/lib/node_modules
-
-# Install Ruby Gems to ~/gems
-#export GEM_HOME="$HOME/gems"
-#export PATH="$HOME/gems/bin:$PATH"
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

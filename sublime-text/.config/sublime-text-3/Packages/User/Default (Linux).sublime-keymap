@@ -1,0 +1,5 @@
+[
+	{ "keys": ["alt+m"], "command": "open_markdown_preview"},
+	{"keys": ["ctrl+'"], "command": "tn_stamp"},
+	
+]

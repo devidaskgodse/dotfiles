@@ -1,0 +1,3 @@
+#!/bin/sh
+# list installed programs
+apt list --installed | grep -v "automatic" | grep -o "^[^/]\+" >> /media/D/obsidian/.CACHE/installed_programs.md ; sort /media/D/obsidian/.CACHE/installed_programs.md | uniq > temp.file ; mv temp.file /media/D/obsidian/.CACHE/installed_programs.md

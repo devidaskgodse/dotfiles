@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+@online{citekey,
+    title = "",
+    url  = "${1:this}",
+    addendum = "(accessed: 04.06.2020)",
+    keywords = ""
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>webref</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.LaTeX</scope> -->
+</snippet>

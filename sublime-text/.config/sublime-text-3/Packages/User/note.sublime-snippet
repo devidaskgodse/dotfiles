@@ -1,0 +1,17 @@
+<snippet>
+	<content><![CDATA[
+---
+title: "${1:this}"
+date: ${2:2021-07-16}
+categories: ["uncategorized"]
+tags: ["untagged"]
+---
+
+${4:write here}
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>note</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.markdown</scope> -->
+</snippet>

@@ -1,0 +1,12 @@
+#!/bin/sh
+# sync with cloud storage
+
+# better to only sync the main content folder in google cloud
+rclone sync ~/zk zk:notes
+rclone sync ~/research-notes zk:wiki
+rclone sync ~/notebooks zk:notebooks
+rclone sync ~/dotfiles zk:dotfiles
+# rest of content
+rclone sync ~/codes zk:codes
+rclone sync ~/latex zk:latex
+rclone sync ~/pdfs zk:pdfs
