@@ -17,3 +17,12 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 sudo apt install fzf silversearcher-ag cmake tldr xclip dmenu
 sudo apt install anydesk zoom teams ffmpeg mpv zathura youtube-dl dwm hugo go gnuplot ctags rclone zsh autojump mpich ctags adb vlc gimp imagemagick
 sudo apt install texlive-base texlive-latex-base texlive-latex-extra texlive-science texlive-publishers
+
+# flatpak install
+sudo apt install flatpak gnome-software-plugin-flatpak
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+# ledger for money management
+sudo add-apt-repository ppa:mbudde/ledger
+sudo apt-get update
+sudo apt-get install ledger
