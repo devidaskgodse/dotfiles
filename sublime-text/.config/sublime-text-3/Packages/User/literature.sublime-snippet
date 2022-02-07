@@ -1,0 +1,29 @@
+<snippet>
+	<content><![CDATA[
+---
+title: "${1:Literature Name}"
+date: ${2:2022-01-30}
+tags: [literature,concept,paper,book,${3:untagged}]
+---
+
+[link to paper](${4:www.example.com})
+[${6:key}.pdf](./${5:papers}/${7:key}.pdf)
+
+Abstract
+
+${8:Write notes here}
+
+Problem
+
+Method
+
+Conclusion
+
+Relevance
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>notes</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
