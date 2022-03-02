@@ -16,10 +16,10 @@ setopt interactive_comments
 
 # Custom Variables
 EDITOR='nvim'
-READER='zathura'
-VISUAL='nvim'
+READER='evince'
+VISUAL='subl'
 alias grep='grep --color=auto'
-alias ls='ls -al --color=always'
+alias ls='ls -a --color=always'
 alias v='nvim'
 # import aliases when available
 [ -f ~/.aliasrc ] && source ~/.aliasrc
@@ -68,10 +68,10 @@ fi
 # exports
 export FZF_DEFAULT_OPTS="--layout=reverse --height=40%"
 export PATH=$PATH:$HOME/bin
-export PATH=$PATH:/usr/local/MATLAB/R2021a/bin
+#export PATH=$PATH:/usr/local/MATLAB/R2021a/bin
 export PATH=$PATH:$HOME/miniconda3/bin
 # sourcing fuzzy file finder if exists
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 
 # source plugins; should be last
