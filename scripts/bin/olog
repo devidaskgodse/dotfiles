@@ -1,0 +1,9 @@
+#!/usr/bin/sh
+
+stamp=$(date +'%Y-%m-%d')
+filename=$HOME/zk/logs/$stamp.md
+
+frontmatter="---\ntitle: '$stamp'\ndate: $stamp\ntags: [daily]\n---\n\n"
+
+[ -f "$filename" ] || echo $frontmatter >> $filename
+subl $filename

@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# Script inspiration: https://github.com/LukeSmithxyz/voidrice/
+[ -z "$1" ] && echo "Give a pdf file as an argument." && exit
+
+if [ -f "$1" ]; then
+	# Try to get DOI from pdfinfo or pdftotext output.
+	doi=$(pdfinfo "$1" | grep -io "doi:.*") ||
+	doi=$(pdftotext "$1" 2>/dev/null - | grep -io "doi:.*" -m 1) ||
+	exit 1
+else
+	doi="$1"
+fi
+
+# Check crossref.org for the bib citation.
+bib_entry=$(curl -s "https://api.crossref.org/works/$doi/transform/application/x-bibtex" -w "\\n")
+citation=$(curl -LH "Accept: text/bibliography; style=apa; locale=fr-FR" https://doi.org/$doi)
+
+# get citekey from the pdf filename
+citekey=$(echo $1 | cut -f1 -d'.')
+notename=$HOME/research-notes/$citekey.md
+stamp=$(date +'%Y-%m-%d')
+
+# generate frontmatter for the note
+frontmatter="---\ntitle: '$citation'\ndate: $stamp\ntags: [literature,paper]\n---\n\n[link to paper](https://doi.org/$doi)\n[$citekey.pdf](./papers/$citekey.pdf)\n\n\n $bib_entry"
+
+[ -f "$notename" ] || echo $frontmatter >> $notename
+subl $notename
