@@ -10,6 +10,7 @@ if ! filereadable(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autolo
 endif
 
 call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"'))
+Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'ptzz/lf.vim'
 Plug 'voldikss/vim-floaterm'
@@ -17,10 +18,9 @@ Plug 'plasticboy/vim-markdown'
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
 " Plug 'junegunn/goyo.vim'
-" Plug 'jreybert/vimagit'
+Plug 'jreybert/vimagit'
 " Plug 'lukesmithxyz/vimling'
 " Plug 'tpope/vim-commentary'
-
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""
@@ -142,6 +142,4 @@ nnoremap <leader>gpl :Gpull<CR>
 " nnoremap <leader> :<CR>
 " nnoremap <leader> :<CR>
 " nnoremap <leader> :<CR>
-
-
 
