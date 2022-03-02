@@ -14,9 +14,13 @@ sudo apt install neovim sublime-text sublime-merge pandoc pandoc-citeproc
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
-sudo apt install fzf silversearcher-ag cmake tldr xclip dmenu
+sudo apt install fzf silversearcher-ag cmake tldr xclip dmenu 
 sudo apt install anydesk zoom teams ffmpeg mpv zathura youtube-dl dwm hugo go gnuplot ctags rclone zsh autojump mpich ctags adb vlc gimp imagemagick
 sudo apt install texlive-base texlive-latex-base texlive-latex-extra texlive-science texlive-publishers
+
+# email configuration depepdencies for mutt-wizard by LukeSmithxyz
+# git clone https://github.com/LukeSmithxyz/mutt-wizard
+sudo apt install neomutt curl isync msmtp pass lynx notmuch abook urlview cronie
 
 # flatpak install
 sudo apt install flatpak gnome-software-plugin-flatpak
