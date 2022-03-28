@@ -17,11 +17,20 @@ Plug 'voldikss/vim-floaterm'
 Plug 'plasticboy/vim-markdown'
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
+" for zettelkasten using vim
+" Plug 'nvim-lua/plenary.nvim'
+" Plug 'nvim-telescope/telescope.nvim'
+" Plug 'renerocksai/telekasten.nvim'
 " Plug 'junegunn/goyo.vim'
 Plug 'jreybert/vimagit'
 " Plug 'lukesmithxyz/vimling'
 " Plug 'tpope/vim-commentary'
 call plug#end()
+
+""""""""""""""""""""""""""""
+" runtime zettelkasten.vim
+
+
 
 """"""""""""""""""""""""""""""""""""
 " remove

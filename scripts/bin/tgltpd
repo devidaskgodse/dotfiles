@@ -1,0 +1,5 @@
+#!/usr/bin/sh
+
+# Toggles touchpad on or off state
+# https://www.commandlinefu.com/commands/view/24256/toggle-the-touchpad-on-or-off
+tp=$(synclient -l | grep TouchpadOff | awk '{ print $3 }') && tp=$((tp==0)) && synclient TouchpadOff=$tp
