@@ -15,8 +15,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'ptzz/lf.vim'
 Plug 'voldikss/vim-floaterm'
 Plug 'plasticboy/vim-markdown'
-Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
+" Plug 'morhetz/gruvbox'
 " for zettelkasten using vim
 " Plug 'nvim-lua/plenary.nvim'
 " Plug 'nvim-telescope/telescope.nvim'
@@ -27,11 +28,6 @@ Plug 'jreybert/vimagit'
 " Plug 'tpope/vim-commentary'
 call plug#end()
 
-""""""""""""""""""""""""""""
-" runtime zettelkasten.vim
-
-
-
 """"""""""""""""""""""""""""""""""""
 " remove
 """"""""""""""""""""""""""""""""""""
@@ -40,7 +36,7 @@ set shortmess+=I " Disable the default Vim startup message.
 set noerrorbells visualbell t_vb= " Disable audible bell because it's annoying.
 
 " Unbind/Rebind some useless/annoying default key bindings.
-nmap Q <Nop> 
+nmap Q <Nop>
 noremap ; :
 noremap : ;
 imap ii <Esc>
@@ -50,7 +46,7 @@ au BufLeave * silent! !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
 """"""""""""""""""""""""""""""""""""
 " reconfigure
 """"""""""""""""""""""""""""""""""""
-filetype off                  
+filetype off 
 filetype plugin indent on 
 syntax on " turn on syntax highlighting
 
@@ -148,7 +144,5 @@ nnoremap <leader>gc :Git<space>commit<CR>
 nnoremap <leader>gps :Gpush<CR>
 nnoremap <leader>gm :Gmerge<CR>
 nnoremap <leader>gpl :Gpull<CR>
-" nnoremap <leader> :<CR>
-" nnoremap <leader> :<CR>
-" nnoremap <leader> :<CR>
 
+" air-line settings for fonts: https://vi.stackexchange.com/questions/3359/how-do-i-fix-the-status-bar-symbols-in-the-airline-plugin
