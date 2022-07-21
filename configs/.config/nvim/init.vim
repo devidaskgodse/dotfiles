@@ -12,25 +12,19 @@ endif
 call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"'))
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'plasticboy/vim-markdown'
 Plug 'ptzz/lf.vim'
 Plug 'voldikss/vim-floaterm'
-Plug 'plasticboy/vim-markdown'
-Plug 'vim-airline/vim-airline'
-Plug 'tpope/vim-fugitive'
-" for zettelkasten using vim
+Plug 'junegunn/goyo.vim'
+" Plug 'lukesmithxyz/vimling'
 " Plug 'nvim-lua/plenary.nvim'
 " Plug 'nvim-telescope/telescope.nvim'
 " Plug 'renerocksai/telekasten.nvim'
-" Plug 'junegunn/goyo.vim'
-Plug 'jreybert/vimagit'
-" Plug 'lukesmithxyz/vimling'
 " Plug 'tpope/vim-commentary'
+" Plug 'jreybert/vimagit'
+" Plug 'tpope/vim-fugitive'
+" Plug 'vim-airline/vim-airline'
 call plug#end()
-
-""""""""""""""""""""""""""""
-" runtime zettelkasten.vim
-
-
 
 """"""""""""""""""""""""""""""""""""
 " remove
