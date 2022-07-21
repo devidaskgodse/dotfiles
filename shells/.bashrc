@@ -116,21 +116,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/machine/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/machine/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/machine/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/machine/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
 #########################################################
 # my settings
 #########################################################
@@ -158,3 +143,21 @@ egf() {
 export FZF_DEFAULT_OPTS="--layout=reverse --height=40%"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/devidas/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/devidas/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/devidas/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/devidas/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+#OpenFOAM path
+#source /opt/openfoam9/etc/bashrc 
