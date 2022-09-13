@@ -146,14 +146,14 @@ export FZF_DEFAULT_OPTS="--layout=reverse --height=40%"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/devidas/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/devidas/conda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/devidas/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/devidas/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/devidas/conda3/etc/profile.d/conda.sh" ]; then
+        . "/home/devidas/conda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/devidas/anaconda3/bin:$PATH"
+        export PATH="/home/devidas/conda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
