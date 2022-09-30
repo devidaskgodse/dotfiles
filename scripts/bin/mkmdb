@@ -1,0 +1,7 @@
+#!/usr/bin/sh
+
+# create markdown content database
+# generates a database file that contains filename, title & tags listed
+# This can then be queried using other programs to search content or create markdown links
+find $HOME/zk/ | grep '\.md$' | xargs head -2 > $HOME/zk/metadata
+notify-send "Database updated " &

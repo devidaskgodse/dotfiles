@@ -1,0 +1,11 @@
+#!/bin/sh
+# selection menu program to create a markdown link to a file from the metadata file
+/home/machine/bin/mkmdb
+database=$HOME/zk/metadata
+selection=$(grep -n '^#.*' $database | dmenu -i -l 10)
+ln=$(echo $selection | grep -o '^[0-9]*')
+title=$(printf "$selection" | cut -d' ' -f2-)
+flnm=$(head -$(($ln-1)) $database | tail +$(($ln-1)) | awk '{print $2}' | rev | cut -d'/' -f 1 | rev)
+
+printf "[$title](./$flnm)" | xclip -selection clipboard
+notify-send "Link to '$flnm' copied to clipboard." &

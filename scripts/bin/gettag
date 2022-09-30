@@ -1,0 +1,6 @@
+#!/bin/sh
+# selection menu program to copy a tag from the metadata file
+/home/machine/bin/mkmdb
+selection=$(grep -o '#\S\+' $HOME/zk/metadata | sort | uniq | dmenu -i)
+printf "$selection " | xclip -selection clipboard
+notify-send "'$selection' copied to clipboard." &
