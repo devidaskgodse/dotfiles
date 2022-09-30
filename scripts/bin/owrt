@@ -2,9 +2,8 @@
 
 # generates UUID based markdown files with prefilled YAML frontmatter
 
-filename=$HOME/research-notes/$(uuidgen).md # requires uuidgenerator
-stamp=$(date +'%Y-%m-%d')
-frontmatter="---\ntitle: 'Note Title'\ndate: $stamp\ntags: [literature,paper,thesis,concept,observation]\n---\n\n"
+filename=$HOME/zk/$(uuidgen).md # requires uuidgenerator
+frontmatter="# Note Title\ntags: #untagged \n\n"
 
 echo $frontmatter >> $filename
 subl $filename

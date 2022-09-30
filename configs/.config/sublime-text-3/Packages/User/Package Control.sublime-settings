@@ -11,10 +11,12 @@
 		"FileManager",
 		"FuzzyFilePath",
 		"GitSavvy",
+		"Highlight Duplicates",
 		"Open URL",
 		"Package Control",
 		"RemoveDuplicateLines",
 		"Timenow",
+		"UrlConverter",
 	],
 	"repositories":
 	[
