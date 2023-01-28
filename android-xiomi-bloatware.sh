@@ -1,3 +1,5 @@
+#!/bin/sh
+
 sudo apt install adb
 adb devices -l
 # when in doubt, prefer to disable the apps first. if it causes problem, you can revert back and enable it

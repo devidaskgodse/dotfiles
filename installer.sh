@@ -67,8 +67,6 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 # git clone https://github.com/LukeSmithxyz/mutt-wizard
 sudo apt install neomutt isync msmtp pass lynx notmuch abook urlview cronie
 
-
-
 # python
 # wget https://repo.anaconda.com/archive/Anaconda3-latest-Linux-x86_64.sh
 # github-cli
