@@ -1,0 +1,66 @@
+# Dependancies for this config
+# git clone --depth=1 https://github.com/zdharma-continuum/fast-syntax-highlighting ~/.zsh/fast-syntax-highlighting
+# git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions/ ~/.zsh/zsh-autosuggestions/
+# touch "$HOME/.cache/zshhistory
+
+# Enable colors and change prompt:
+autoload -U colors && colors
+PS1="%B%{$fg[cyan]%}%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%m %{$fg[magenta]%}%~%{$reset_color%} %# "
+
+autoload -U promptinit
+#promptinit
+autoload -Uz vcs_info
+
+setopt histignorealldups sharehistory appendhistory
+setopt autocd
+setopt interactive_comments
+
+# Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
+HISTSIZE=10000000
+SAVEHIST=10000000
+HISTFILE=~/.cache/zshhistory
+
+# Use modern completion system
+autoload -Uz compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+#compinit
+_comp_options+=(globdots)               # Include hidden files.
+
+# Custom Variables
+EDITOR='nvim'
+alias grep='grep --color=auto'
+alias ls='ls -a --color=always'
+alias v='nvim'
+
+# import aliases when available
+[ -f ~/.funcrc ] && source ~/.funcrc
+[ -f ~/.aliasrc ] && source ~/.aliasrc
+
+# export paths
+export PATH=$PATH:$HOME/bin # custom scripts
+export PATH=$PATH:/usr/local/texlive/2022/bin/universal-darwin # latex
+export PATH=$PATH:/Applications/Julia-1.8.app/Contents/Resources/julia/bin/ # julia
+export PATH=$PATH:~/.roswell/bin # lisp
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/devidas/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/devidas/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/devidas/opt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/devidas/opt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+# source plugins; should be last
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+
+# Starship prompt
+eval "$(starship init zsh)"

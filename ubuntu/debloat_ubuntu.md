@@ -7,7 +7,6 @@
 - gedit
 - media player
 
-
 ## remove snap store with following script
 
 list all snaps with following command
@@ -46,3 +45,4 @@ rm -rf ~/snap
 sudo rm -rf /snap
 sudo rm -rf /var/snap
 sudo rm -rf /var/lib/snapd
+```

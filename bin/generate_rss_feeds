@@ -1,0 +1,113 @@
+#!/bin/bash
+
+# Detect URL from clipboard
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  url=$(xclip -o)
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+  url=$(pbpaste)
+elif [[ "$OSTYPE" == "msys" ]] || [[ "$OSTYPE" == "win32" ]]; then
+  url=$(clip.exe)
+fi
+
+# Check if URL is for a YouTube channel
+if [[ $url == *"youtube.coom/channel/"* ]]; then
+  # Extract YouTube Channel ID
+  youtube_channel_id=$(echo $url | sed -r 's/.*youtube.com\/channel\/(.+)$/\1/')
+  youtube_rss_feed_url="https://www.youtube.com/feeds/videos.xml?channel_id=$youtube_channel_id"
+  # Copy the url to clipboard and send notification
+  if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    echo $youtube_rss_feed_url | tr -d '\n' | xclip -selection clipboard # Copy to clipboard on Linux
+    notify-send "YouTube RSS Feed" "$youtube_rss_feed_url"
+  elif [[ "$OSTYPE" == "darwin"* ]]; then
+    echo $youtube_rss_feed_url | tr -d '\n' | pbcopy # Copy to clipboard on macOS
+    # TODO: Add notifications for mac and windows
+  elif [[ "$OSTYPE" == "msys" ]] || [[ "$OSTYPE" == "win32" ]]; then
+    echo $youtube_rss_feed_url | tr -d '\n' | clip.exe # Copy to clipboard on Windows
+    # TODO: Add notifications for mac and windows
+  fi
+
+# Check if URL is for a YouTube channel page
+elif [[ $url == *"youtube.com/"* ]]; then
+  # Extract YouTube Channel ID using yt-dlp
+  if [[ "$OSTYPE" == "linux-gnu"* ]] || [[ "$OSTYPE" == "darwin"* ]]; then
+    youtube_channel_url=$(yt-dlp --print channel_url --playlist-items 1 --no-warnings "$url")
+  elif [[ "$OSTYPE" == "msys" ]] || [[ "$OSTYPE" == "win32" ]]; then
+    youtube_channel_url=$(yt-dlp.exe --print channel_url --playlist-items 1 --no-warnings "$url")
+  fi
+  youtube_channel_id=$(echo $youtube_channel_url | sed -r 's/.*channel\/(.+)$/\1/')
+  youtube_rss_feed_url="https://www.youtube.com/feeds/videos.xml?channel_id=$youtube_channel_id"
+  
+  # Copy the url to clipboard and send notification
+  if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    echo $youtube_rss_feed_url | tr -d '\n' | xclip -selection clipboard # Copy to clipboard on Linux
+    notify-send "YouTube RSS Feed" "$youtube_rss_feed_url"
+  elif [[ "$OSTYPE" == "darwin"* ]]; then
+    echo $youtube_rss_feed_url | tr -d '\n' | pbcopy # Copy to clipboard on macOS
+    # TODO: Add notifications for mac and windows
+  elif [[ "$OSTYPE" == "msys" ]] || [[ "$OSTYPE" == "win32" ]]; then
+    echo $youtube_rss_feed_url | tr -d '\n' | clip.exe # Copy to clipboard on Windows
+    # TODO: Add notifications for mac and windows
+  fi
+
+# Check if URL is for a Twitter handle
+elif [[ $url == *"twitter.com/"* ]]; then
+  # Extract Twitter Handle
+  twitter_handle=$(echo $url | sed -r 's/.*twitter.com\/(.+)$/\1/' | cut -d '/' -f1)
+  twitter_rss_feed_url="https://nitter.kavin.rocks/$twitter_handle/rss"
+  echo "Twitter RSS Feed URL: $twitter_rss_feed_url"
+
+  # Copy the url to clipboard and send notification
+  if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    echo $twitter_rss_feed_url | tr -d '\n' | xclip -selection clipboard # Copy to clipboard on Linux
+    notify-send "Twitter RSS Feed" "$twitter_rss_feed_url"
+  elif [[ "$OSTYPE" == "darwin"* ]]; then
+    echo $twitter_rss_feed_url | tr -d '\n' | pbcopy # Copy to clipboard on macOS
+    # TODO: Add notifications for mac and windows
+  elif [[ "$OSTYPE" == "msys" ]] || [[ "$OSTYPE" == "win32" ]]; then
+    echo $twitter_rss_feed_url | tr -d '\n' | clip.exe # Copy to clipboard on Windows
+    # TODO: Add notifications for mac and windows
+  fi
+
+# Check if URL is for a subreddit
+elif [[ $url == *"reddit.com/r/"* ]]; then
+  # Extract Subreddit Name
+  subreddit_name=$(echo $url | sed -r 's/.*reddit.com\/r\/(.+)$/\1/' | cut -d '/' -f1)
+  subreddit_rss_feed_url="https://www.reddit.com/r/$subreddit_name.rss"
+  
+  # Copy the url to clipboard and send notification
+  if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    echo $subreddit_rss_feed_url | tr -d '\n' | xclip -selection clipboard # Copy to clipboard on Linux
+    notify-send "Subreddit RSS Feed" "$subreddit_rss_feed_url"
+  elif [[ "$OSTYPE" == "darwin"* ]]; then
+    echo $subreddit_rss_feed_url | tr -d '\n' | pbcopy # Copy to clipboard on macOS
+    # TODO: Add notifications for mac and windows
+  elif [[ "$OSTYPE" == "msys" ]] || [[ "$OSTYPE" == "win32" ]]; then
+    echo $subreddit_rss_feed_url | tr -d '\n' | clip.exe # Copy to clipboard on Windows
+    # TODO: Add notifications for mac and windows
+  fi
+
+# Check if URL is for a github repository or activity
+elif [[ $url == *"github.com/r/"* ]]; then
+  # Extract Repository Name
+  # TODO: Add ability to extract the username
+  repo_name=$(echo $url | sed -r 's/.*github.com\/(.+)$/\1/' | cut -d '/' -f1)
+  repo_rss_feed_url="https://github.com/$repo_name.atom"
+  
+  # Copy the url to clipboard and send notification
+  if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    echo $repo_rss_feed_url | tr -d '\n' | xclip -selection clipboard # Copy to clipboard on Linux
+    notify-send "Subreddit RSS Feed" "$subreddit_rss_feed_url"
+  elif [[ "$OSTYPE" == "darwin"* ]]; then
+    echo $repo_rss_feed_url | tr -d '\n' | pbcopy # Copy to clipboard on macOS
+    # TODO: Add notifications for mac and windows
+  elif [[ "$OSTYPE" == "msys" ]] || [[ "$OSTYPE" == "win32" ]]; then
+    echo $repo_rss_feed_url | tr -d '\n' | clip.exe # Copy to clipboard on Windows
+    # TODO: Add notifications for mac and windows
+  fi
+
+# URL does not match any supported type
+else
+  echo "Unsupported URL: $url"
+  notify-send "Unsupported URL"
+  # TODO: Add notifications for mac and windows
+fi
