@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# TODO: Add conditionals that checks whether the programme/system is installed or not and accordingly perform the update
+
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+	sudo apt update
+	sudo apt upgrade
+fi
+
+# Homebrew
+brew upgrade
+
+# upgrade conda
+conda update --all
+conda update -n base -c defaults conda
+
+# julia file or one lines for updating packages
+juliaup update
+juliaup self update
+julia -e "import Pkg; Pkg.update()"
+julia +alpha -e "import Pkg; Pkg.update()"
+
+# rust update
+rustup update
+cargo install cargo --force
